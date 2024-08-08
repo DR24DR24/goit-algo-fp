@@ -97,3 +97,24 @@ def test_mergesort():
         logger.debug(f" source     : {l1_sort}")
         logger.debug(f"Linked list : {ll1_sort}")
         assert ll1_sort==l1_sort
+
+def test_reverse():
+    k=16
+    for i in range(k):
+        n=random.randint(0,k)
+        l1=[random.randint(0,n) for _ in range (n)]
+        #l1.sort()
+        ll1 = task1.LinkedList()
+        for i in l1:
+            ll1.insert_at_end(i) 
+
+        ll1.print_list()
+        ll1.revers()
+        ll1.print_list()
+
+        ll1_revers=ll1.linkedList2list()
+        l1_revers=list(reversed(l1))
+        logger.info(f"n {n}")
+        logger.debug(f" source     : {l1_revers}")
+        logger.debug(f"Linked list : {ll1_revers}")
+        assert ll1_revers==l1_revers

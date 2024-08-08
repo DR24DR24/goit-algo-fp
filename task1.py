@@ -117,11 +117,7 @@ class LinkedList:
             current_res.next=current2
             return next_seg
             
-
-
-                
-        
-    
+     
     def define_segment_and_merging(self, segment_length:int):
         flag_size=False
         virtual_node=Node(None)
@@ -161,6 +157,15 @@ class LinkedList:
         while self.define_segment_and_merging(segment_length):
             segment_length*=2
 
+    def revers(self):
+        current=self.head
+        self.head=None
+        while current:
+            top=current
+            current=current.next
+            top.next=self.head
+            self.head=top
+
 
 
                 
@@ -194,18 +199,5 @@ if element:
 
 
 
-ll1 = LinkedList()
-k=16
-n=random.randint(0,16)
-l1=[random.randint(0,n) for _ in range (n)]
-#l1.sort()
-for i in l1:
-    ll1.insert_at_end(i) 
 
-ll1.print_list()
-
-
-#ll1.define_segment_and_merging(4)
-ll1.mergesort()
-ll1.print_list()
 
