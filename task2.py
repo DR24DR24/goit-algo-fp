@@ -4,7 +4,7 @@ import math
 
 
 def pythagoras_tree(t:turtle.Turtle, branches:list):
-    tree_angl=math.pi/3
+    tree_angl=math.pi/4*1.1
     while branches:
         pos,angl,size,order=branches.pop()
         t.penup()
