@@ -44,7 +44,7 @@ def draw_tree(tree_root):
 
 
 
-def show_heap(l):
+def heap_to_tree(l):
     try:
         root=Node(l[0])
         q=[root]
@@ -59,7 +59,8 @@ def show_heap(l):
             q.append(cur_heap_item.right)
     except IndexError:
         pass  
-    draw_tree(root)      
+    return root
+         
 
 
 
@@ -67,4 +68,6 @@ def show_heap(l):
 k=8
 l=list(range(k))
 heapq.heapify(l)
-show_heap(l)
+root=heap_to_tree(l)
+if __name__=="__main__":
+    draw_tree(root)
